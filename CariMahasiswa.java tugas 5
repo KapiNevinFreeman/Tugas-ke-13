@@ -1,0 +1,34 @@
+public class CariMahasiswa {
+    public static void main(String[] args) {
+        // Menyimpan data NIM dan Nama Mahasiswa dalam array 
+        String[] nim = {"230101", "230102", "230103", "230104", "230105"};
+        String[] nama = {"Andi", "Budi", "Citra", "Dewi", "Eka"};
+        
+        // Nama yang dicari [cite: 48]
+        String cariNama = "Citra";
+        int posisi = -1;
+        int langkah = 0;
+
+        // Proses Linear Search [cite: 48]
+        for (int i = 0; i < nama.length; i++) {
+            langkah++; // Menghitung jumlah perbandingan [cite: 52]
+            if (nama[i].equalsIgnoreCase(cariNama)) {
+                posisi = i;
+                break;
+            }
+        }
+
+        // Menampilkan status ditemukan/tidak [cite: 50]
+        if (posisi != -1) {
+            System.out.println("Status: Mahasiswa Ditemukan");
+            System.out.println("NIM: " + nim[posisi]);
+            System.out.println("Nama: " + nama[posisi]);
+            System.out.println("Posisi indeks: " + posisi); // Menampilkan posisi indeks [cite: 51]
+        } else {
+            System.out.println("Status: Mahasiswa Tidak Ditemukan");
+        }
+
+        // Menampilkan jumlah perbandingan pencarian [cite: 52]
+        System.out.println("Jumlah perbandingan pencarian: " + langkah);
+    }
+}
